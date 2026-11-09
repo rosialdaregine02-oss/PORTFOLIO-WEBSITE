@@ -1,0 +1,715 @@
+
+/* GENERAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /*background: #0b1120;
+    color: white;*/
+    background-image: url("image/ghibli.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* NAVIGATION BAR */
+header {
+    width: 100%;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.navbar {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+/* LOGO IMAGE UPPER RIGHT LEFT */
+.logo {
+    color: #38bdf8;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #38bdf8;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    padding: 10px 18px;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+    border-color: #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+/* HOME SECTION */
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 60px;
+    /*background: linear-gradient(
+        135deg,
+        #0b1120,
+        #172d50
+    );*/
+    background-color: transparent;
+}
+
+.content{
+    position: absolute;
+    text-align: center;
+    right: 150px;
+    top: 150px;
+    /*border: 3px solid black;*/
+    background: rgba(23, 45, 80, 0.8);    
+    border-radius: 15px;
+
+}
+
+.content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #FFFACD;
+}
+
+.content h1 {
+    font-size: 55px;
+    margin-bottom: 15px;
+    color: #F5F5DC;
+}
+
+.content h1 span {
+    color: #FFD700;
+}
+
+.content h2 {
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+.content p {
+    max-width: 600px;
+    line-height: 1.8;
+    margin: auto;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* PROFILE */
+.profile {
+    position: absolute;
+    left: 225px;
+    top: 150px;
+    text-align: center;
+    /*border: 3px solid black;*/
+}
+
+.profile img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    /*border: 3px solid black;*/
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #38bdf8;
+    color: #0b1120;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+    transform: translateY(-5px);
+}
+
+.btn:hover {
+    background: transparent;
+    transform: translateY(-10px);
+    color: #000000;
+    border-color: #000000;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+/* GENERAL SECTIONS */
+.section {
+    min-height: 100vh;
+    padding: 120px 20px 60px;
+    text-align: center;
+    scroll-margin-top: 70px;
+}
+
+.section:nth-of-type(even) {
+    background: transparent;
+}
+
+.section h1 {
+    font-size: 35px;
+    color: whitesmoke;
+    margin-bottom: 35px;
+}
+
+.section-content {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.9;
+    font-size: 17px;
+    /*border: 3px solid black;*/
+    border-radius: 15px;
+    background: rgba(23, 45, 80, 0.8);
+    border: 3px solid black;
+}
+
+.section-content p{
+    color: white;
+}
+
+/* CARDS */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.card {
+    background: rgba(23, 45, 80, 0.8);
+    width: 260px;
+    padding: 30px 20px;
+    border-radius: 15px;
+    border: 1px solid #263e60;
+    transition: 0.3s;
+    border: 3px solid black;
+
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #38bdf8;
+    box-shadow: 0 5px 20px rgba(56,189,248,0.2);
+}
+
+.card h2 {
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+.card p {
+    line-height: 1.7;
+    color: #cbd5e1;
+}
+
+/* RESUME BUTTON */
+#resume .btn {
+    margin-top: 25px;
+}
+
+/* FOOTER */
+footer {
+    background: #070d18;
+    text-align: center;
+    padding: 25px;
+    color: #94a3b8;
+    line-height: 1.8;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .home-content h1 {
+        font-size: 38px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .section h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+.nav-links a.active {
+    color: #38bdf8;
+    border-bottom: 2px solid #38bdf8;
+    padding-bottom: 5px;
+}
+
+ .social-icons {
+      display: flex;
+      justify-content: center ;
+      flex-wrap: wrap;
+      align-items:center;
+      gap: 18px;
+      
+      position: absolute ;
+      left: 200px;
+      bottom: 180px;
+      /*border: 2px solid black;*/
+
+    }
+
+    .social-icons a {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: white;
+      color: #243b55;
+      font-size: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-8px);
+      color: white;
+    }
+
+    .facebook:hover { background: #1877F2; }
+    .instagram:hover {
+      background: linear-gradient(45deg, #feda75, #d62976, #962fbf);
+    }
+    .tiktok:hover { background: #000; }
+    .youtube:hover { background: #FF0000; }
+    .twitter:hover { background: #1DA1F2; }
+
+    /* ==========================
+   DRAGON POSITION
+========================== */
+
+.dragon-container {
+    position: fixed;
+    bottom: 15px;
+    left: 20px;
+
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ==========================
+   SPEECH BUBBLE
+========================== */
+
+.speech {
+    background: white;
+    color: #333;
+
+    padding: 12px 18px;
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+    margin-bottom: 5px;
+
+    transition: 0.3s;
+}
+
+
+/* ==========================
+   DRAGON
+========================== */
+
+.dragon-area {
+    width: 150px;
+    cursor: pointer;
+}
+
+.dragon-svg {
+    width: 100%;
+    overflow: visible;
+
+    animation: dragonFloat 2s ease-in-out infinite;
+}
+
+
+/* FLOATING */
+
+@keyframes dragonFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* ==========================
+   WING ANIMATION
+========================== */
+
+.wing {
+    transform-box: fill-box;
+    transform-origin: bottom center;
+
+    animation: flap 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes flap {
+
+    from {
+        transform: rotate(-8deg);
+    }
+
+    to {
+        transform: rotate(12deg);
+    }
+
+}
+
+
+/* ==========================
+   TAIL ANIMATION
+========================== */
+
+.tail {
+    transform-box: fill-box;
+    transform-origin: right center;
+
+    animation: tailMove 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes tailMove {
+
+    from {
+        transform: rotate(-8deg);
+    }
+
+    to {
+        transform: rotate(8deg);
+    }
+
+}
+
+
+/* ==========================
+   FIRE EFFECT
+========================== */
+
+.fire {
+    opacity: 0;
+
+    transform-box: fill-box;
+    transform-origin: left center;
+
+    pointer-events: none;
+}
+
+
+/* FIRE COLORS */
+
+.outer-fire {
+    filter: drop-shadow(0 0 8px orange);
+}
+
+.middle-fire {
+    filter: drop-shadow(0 0 5px yellow);
+}
+
+
+/* FIRE ANIMATION */
+
+@keyframes fireBreath {
+
+    0% {
+        opacity: 0;
+        transform: scaleX(0.2) scaleY(0.7);
+    }
+
+    40% {
+        opacity: 1;
+        transform: scaleX(1.1) scaleY(1.2);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scaleX(1.3) scaleY(0.9);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scaleX(0.4) scaleY(0.7);
+    }
+
+}
+
+
+/* SHOW FIRE WHEN HOVERING */
+
+.dragon-area:hover .fire {
+    opacity: 1;
+    animation: fireBreath 0.5s infinite;
+}
+
+
+/* SHOW FIRE WHEN CLICKED */
+
+.dragon-area.breathing .fire {
+    opacity: 1;
+    animation: fireBreath 0.5s infinite;
+}
+
+
+/* DRAGON REACTION */
+
+.dragon-area.breathing .dragon-svg {
+    animation: dragonFloat 0.5s ease-in-out infinite;
+}
+
+
+/* HOVER EFFECT */
+
+.dragon-area:hover {
+    filter: drop-shadow(0 0 8px orange);
+}
+
+
+/* MOBILE SIZE */
+
+@media (max-width: 600px) {
+
+    .dragon-container {
+        right: 5px;
+        bottom: 10px;
+    }
+
+    .dragon-area {
+        width: 170px;
+    }
+
+}
+
+/* CLICKABLE PARAGRAPHS AND HEADERS */
+.open-modal {
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.open-modal:hover {
+    color: #00bcd4;
+}
+/* MODAL BACKGROUND */
+.modal-overlay {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+    padding: 20px;
+}
+
+/*IMAGE FOR MODAL*/
+.modal-box img{
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+/* SHOW MODAL */
+.modal-overlay.active {
+    display: flex;
+}
+
+/* MODAL BOX */
+.modal-box {
+    position: relative;
+
+    background: white;
+
+    width: 100%;
+    max-width: 450px;
+
+    padding: 35px;
+    border-radius: 15px;
+
+    text-align: center;
+    /*width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    text-align: center;*/
+
+    animation: modalAppear 0.3s ease;
+}
+
+.modal-box img{
+    display: block;
+    /*width: 300px;
+    height: 300px;
+*/    border-radius: 10%;
+    object-fit: contain;
+    margin:  0 auto 2px;
+}
+
+.modal-box h2 {
+    margin-bottom: 10px;
+}
+
+.modal-box p {
+    margin-bottom: 20px;
+    color: #777;
+}
+
+/* CLOSE BUTTON */
+.close-modal {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+
+    font-size: 30px;
+
+    border: none;
+    background: none;
+
+    cursor: pointer;
+}
+
+/* FORM */
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#contactForm label {
+    font-weight: bold;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+#contactForm textarea {
+    height: 110px;
+    resize: vertical;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+    padding: 13px;
+
+    background: #222;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #00bcd4;
+}
+
+/* ANIMATION */
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    nav {
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .modal-box {
+        padding: 25px;
+    }
+}
