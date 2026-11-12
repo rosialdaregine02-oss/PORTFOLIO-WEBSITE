@@ -1,8 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script>document.documentElement.classList.add("js")</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Profile</title>
     
@@ -11,6 +11,9 @@
      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
      <!--  CSS -->
+     <meta name="theme-color" content="#050d1f">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
      <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
@@ -20,18 +23,22 @@
     <!-- NAVIGATION BAR -->
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <!-- <h2>REGINE ROSIALDA</h2>  -->
-            </div>
+            <div class="logo"><a href="#home" aria-label="Home">RR</a></div>
 
-            <ul class="nav-links">
+            <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><i class="fas fa-bars"></i></button>
+
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#skills">SKILLS</a></li>
                 <li><a href="#projects">PROJECTS</a></li>
                 <li><a href="#certificates">CERTIFICATES</a></li>
                 <li><a href="#education">EDUCATION</a></li>
                 <li><a href="#resume">RESUME</a></li>
+                <li><a href="#contact" class="open-modal" data-modal="contactModal">CONTACT</a></li>
             </ul>
         </nav>
+        <div class="progress" id="progress"></div>
     </header>
 
     <!-- HOME SECTION -->
@@ -41,7 +48,7 @@
             <div class="content">
                 <h3>Hello, Welcome to My Website!</h3>
             <h1>I'm <span>Regine Rosialda</span></h1>
-            <h2>A Computer Science Student</h2>
+            <h2 class="roles"><span id="typed">A Computer Science Student</span><span class="caret" aria-hidden="true"></span></h2>
             <p>
                 Welcome to my personal portfolio website.
                 Explore my skills, projects, certificates,
@@ -76,12 +83,6 @@
                 <i class="fab fa-tiktok"></i>
             </a>
 
-            <a href="https://youtube.com/@YOUR_USERNAME"
-                class="youtube" target="_blank"
-                rel="noopener noreferrer" aria-label="YouTube">
-                <i class="fab fa-youtube"></i>
-            </a>
-
             </div>
 
 
@@ -92,7 +93,7 @@
         <h1>ABOUT ME</h1>
         <div class="section-content">
             <p>
-                Hi! My name is Your Name. I am a passionate and
+                Hi! My name is Regine Rosialda. I am a passionate and
                 motivated student who enjoys learning new things
                 and developing my skills. I am interested in
                 technology, creativity, and personal growth.
@@ -108,184 +109,96 @@
 
         <div class="card-container">
             <div class="card">
+                <span class="card-icon" aria-hidden="true"><i class="fab fa-html5"></i></span>
                 <h2>HTML</h2>
                 <p>Creating and structuring web pages.</p>
             </div>
 
             <div class="card">
+                <span class="card-icon" aria-hidden="true"><i class="fab fa-css3-alt"></i></span>
                 <h2>CSS</h2>
                 <p>Designing and styling websites.</p>
             </div>
 
             <div class="card">
+                <span class="card-icon" aria-hidden="true"><i class="fab fa-js"></i></span>
                 <h2>JavaScript</h2>
                 <p>Adding interactive features to websites.</p>
             </div>
 
             <div class="card">
+                <span class="card-icon" aria-hidden="true"><i class="fas fa-comments"></i></span>
                 <h2>Communication</h2>
                 <p>Effective communication and teamwork.</p>
             </div>
         </div>
     </section>
 
-    <!-- PROJECT 1 -->
-<div class="modal-overlay" id="project1Modal">
-
-    <div class="modal-box">
-
-        <button class="close-modal" type="button">
-            &times;
-        </button>
-
-        <img src="image/logo.jpg">
-        <p>A WEBSITE FOR STUDENT TO BOOK A RIDE</p>
-
-    </div>
-
-</div>
-
-
-<!-- PROJECT 2 -->
-<!-- <div class="modal-overlay" id="project2Modal">
-
-    <div class="modal-box">
-
-        <button class="close-modal" type="button">
-            &times;
-        </button>
-
-        <h2>Web Design Project</h2>
-
-        <p>My web design project details.</p>
-
-    </div>
-
-</div>
- -->
-
-<!-- PROJECT 3 -->
-<!-- <div class="modal-overlay" id="project3Modal">
-
-    <div class="modal-box">
-
-        <button class="close-modal" type="button">
-            &times;
-        </button>
-
-        <h2>School Activity Project</h2>
-
-        <p>My school activity project details.</p>
-
-    </div>
-
-</div> -->
-
     <!-- PROJECTS SECTION -->
     <section id="projects" class="section">
         <h1>MY PROJECT</h1>
 
-        <div class="card-container">
-            <div class="card">
-                <h2 class="open-modal" data-modal="project1Modal">Project 1</h2>
-                <p data-message="BOOK YOUR RIDE!!!">SAKAY</p>
-            </div>
-
-            <!-- <div class="card">
-                <h2 class="open-modal" data-modal="project2Modal">Project 2</h2>
-                <p data-message= "My Web Design Project">Web Design Project</p>
-            </div>
-
-            <div class="card">
-                <h2 class="open-modal" data-modal="project3Modal">Project 3</h2>
-                <p data-message="My School Project">School Activity Project</p>
-            </div> -->
-            <!-- <div class="card-container">
-                
-                <button></button>
-            </div>
-
-        </div> -->
+        <div class="card-container single">
+            <article class="card showcase">
+                <img class="logo-img" src="image/logo.jpg" alt="SAKAY logo – your trusted booking companion" loading="lazy">
+                <h2>SAKAY</h2>
+                <p>A website for students to book a ride.</p>
+            </article>
+        </div>
     </section>
 
-     <!-- CERTIFICATE 1 -->
-<div class="modal-overlay" id="certificate1Modal">
-
-    <div class="modal-box">
-
-        <button class="close-modal" type="button">
-            &times;
-        </button>
-
-        <img src="image/cert2.jpg">
-
-    </div>
-
-</div>
-
-    <!-- CERTIFICATE 2 -->
-
-    <div class="modal-overlay" id="certificate2Modal">
-
-    <div class="modal-box">
-
-        <button class="close-modal" type="button">
-            &times;
-        </button>
-
-        <img src="image/cert3.png">
-
-    </div>
-</div>
-
-    <!-- CERTIFICATE 3 -->
-    <div class="modal-overlay" id="cert3Modal">
-
-    <div class="modal-box">
-
-        <button class="close-modal" type="button">
-            &times;
-        </button>
-
-        <img src="image/cert4.jpg">
-    </div>
-</div>
-
-
-    <!-- CERTIFICATES SECTION -->
+     <!-- CERTIFICATES SECTION -->
     <section id="certificates" class="section">
         <h1>MY CERTIFICATES</h1>
 
-        <div class="card-container">
-            <div class="card">
-                <h2 class="open-modal" data-modal="certificate1Modal">Certificate 1</h2>
-                <p data-message="My Certificate">INTEGRATED OS-B BE MORE DIGI-TALINO.</p>
-            </div>
-
-            <div class="card">
-                <h2 class="open-modal" data-modal="certificate2Modal">Certificate 2</h2>
-                <p data-message="My Certificate">NETWORKING BASICS.</p>
-            </div>
-            <div class="card">
-                <h2 class="open-modal" data-modal="cert3Modal">Certificate 3</h2>
-                <p data-message="My Certificate">INTRODUCTION TO AI LITERACY AND RESPONSIBLE USEX.</p>
-            </div>
+        <div class="card-container wide">
+            <figure class="card showcase">
+                <img src="image/cert2.jpg" alt="Certificate of Participation – Integrated OS webinar" loading="lazy">
+                <figcaption>
+                    <h2>Integrated OS – Be More Digi-TALINO</h2>
+                    <p>Webinar · September 5, 2025</p>
+                </figcaption>
+            </figure>
+            <figure class="card showcase">
+                <img src="image/cert3.png" alt="Certificate – Networking Basics, Cisco Networking Academy" loading="lazy">
+                <figcaption>
+                    <h2>Networking Basics</h2>
+                    <p>Cisco Networking Academy · May 26, 2026</p>
+                </figcaption>
+            </figure>
+            <figure class="card showcase">
+                <img src="image/cert4.jpg" alt="Certificate of Completion – Introduction to AI Literacy and Responsible Use" loading="lazy">
+                <figcaption>
+                    <h2>Introduction to AI Literacy and Responsible Use</h2>
+                    <p>Mapúa University × CHED · September 14, 2026</p>
+                </figcaption>
+            </figure>
+            <figure class="card showcase">
+                <img src="image/cert1.jpg" alt="Certificate of Participation – Unplug and Unwind seminar" loading="lazy">
+                <figcaption>
+                    <h2>Unplug &amp; Unwind: Redefining Digital Connection and Safe Spaces</h2>
+                    <p>BiPSU Computer Science Society · February 2024</p>
+                </figcaption>
+            </figure>
         </div>
-
     </section>
+
+
 
     <!-- Love EDUCATION MODAL HERE mag add la ako code basin ganahan ka na COLLEGE la then pag click may mo gawas na modal box na naa imo info-->
 
          <!-- College -->
 <div class="modal-overlay" id="collegeModal">
 
-    <div class="modal-box">
+    <div class="modal-box" role="dialog" aria-modal="true">
 
-        <button class="close-modal" type="button">
+        <button class="close-modal" type="button" aria-label="Close">
             &times;
         </button>
 
-        <img src="profile.jpg"> <!-- Love nga below line ka mag add og header, paragrapgh or image nimo-->
+        <img src="image/regine.jpg" alt="Regine Rosialda">
+        <h2>College</h2>
+        <p>Biliran Province State University – BS in Computer Science</p>
 
     </div>
 </div> 
@@ -293,13 +206,15 @@
     <!-- Seniorhigh -->
 <div class="modal-overlay" id="seniorModal">
 
-    <div class="modal-box">
+    <div class="modal-box" role="dialog" aria-modal="true">
 
-        <button class="close-modal" type="button">
+        <button class="close-modal" type="button" aria-label="Close">
             &times;
         </button>
 
-        <img src="profile.jpg"> <!-- Love nga below line ka mag add og header, paragrapgh or image nimo-->
+        <img src="image/regine.jpg" alt="Regine Rosialda">
+        <h2>High School</h2>
+        <p>Kawayan National High School – General Academic Strand</p>
 
     </div>
 </div>
@@ -307,13 +222,15 @@
     <!-- JuniorHigh -->
 <div class="modal-overlay" id="juniorModal">
 
-    <div class="modal-box">
+    <div class="modal-box" role="dialog" aria-modal="true">
 
-        <button class="close-modal" type="button">
+        <button class="close-modal" type="button" aria-label="Close">
             &times;
         </button>
 
-        <img src="profile.jpg"> <!-- Love nga below line ka mag add og header, paragrapgh or image nimo-->
+        <img src="image/regine.jpg" alt="Regine Rosialda">
+        <h2>Elementary School</h2>
+        <p>Bilwang Elementary School</p>
 
     </div>
 
@@ -324,6 +241,7 @@
 
         <div class="card-container">
             <div class="card">
+                <span class="card-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
                 <h2 class="open-modal" data-modal="collegeModal">College</h2>
                 <p>Biliran Province State University</p> <!-- Love delete nla ang paragraph if gusto nimo ako idea na clickable and header same goes sa ubos ng duwa-->
                 <p>Bachelor of Science in Computer Science</p>
@@ -331,12 +249,14 @@
             </div>
 
             <div class="card">
+                <span class="card-icon" aria-hidden="true"><i class="fas fa-school"></i></span>
                 <h2 class="open-modal" data-modal="seniorModal">High School</h2>
                 <p>Kawayan National Highschool</p>
                 <p>General Academic Strand</p>
             </div>
 
             <div class="card">
+                <span class="card-icon" aria-hidden="true"><i class="fas fa-book-open"></i></span>
                 <h2 class="open-modal" data-modal="juniorModal">Elementary School</h2>
                 <p>Bilwang Elementary School</p>
             </div>
@@ -353,6 +273,8 @@
                 the button below.
             </p>
 
+            <img class="resume-preview" src="image/res.webp" alt="Preview of Regine Rosialda's resume" loading="lazy">
+
             <a href="image/res.webp" download class="btn"> <!-- LOVE EDITA ADI ANG RESUME HREFEF CHANGE ANG RESUME.PDF SA IMO FILE NAME IG SAVE LA ANG FILE SA JASPER FOLDER NAA SA DOCUMENT MAKITA-->
                 DOWNLOAD MY RESUME
             </a>
@@ -365,223 +287,15 @@
         <p>Thank you for visiting my website!</p>
     </footer>
 
-     <!-- DRAGON MASCOT -->
+     
 
-    <div class="dragon-container" id="dragonContainer">
-
-        <!-- GREETING -->
-
-        <div class="speech" id="speech">
-            Hi! Welcome! 👋
-        </div>
-
-
-        <!-- DRAGON SVG -->
-
-        <div class="dragon-area" id="dragon">
-
-            <svg class="dragon-svg"
-                 viewBox="0 0 300 260"
-                 xmlns="">
-http://www.w3.org/2000/svg
-                <!-- TAIL -->
-
-                <path
-                    class="tail"
-                    d="M 95 190 Q 35 225 45 160 Q 50 130 25 125"
-                    fill="none"
-                    stroke="#239B56"
-                    stroke-width="19"
-                    stroke-linecap="round"/>
-
-                <path
-                    d="M 25 125 L 5 105 L 35 110 Z"
-                    fill="#176B3B"/>
-
-
-                <!-- BACK WING -->
-
-                <path
-                    class="wing"
-                    d="M 105 125
-                       Q 60 70 90 25
-                       Q 105 65 130 55
-                       Q 145 85 145 130 Z"
-                    fill="#27AE60"
-                    stroke="#176B3B"
-                    stroke-width="4"/>
-
-
-                <!-- BODY -->
-
-                <ellipse
-                    cx="125"
-                    cy="175"
-                    rx="75"
-                    ry="55"
-                    fill="#27AE60"
-                    stroke="#176B3B"
-                    stroke-width="4"/>
-
-
-                <!-- BELLY -->
-
-                <ellipse
-                    cx="140"
-                    cy="185"
-                    rx="43"
-                    ry="35"
-                    fill="#F9D976"/>
-
-
-                <!-- HEAD -->
-
-                <ellipse
-                    cx="190"
-                    cy="105"
-                    rx="68"
-                    ry="60"
-                    fill="#2ECC71"
-                    stroke="#176B3B"
-                    stroke-width="4"/>
-
-
-                <!-- HORNS -->
-
-                <path
-                    d="M 145 65 L 130 15 L 170 55 Z"
-                    fill="#F4D03F"
-                    stroke="#176B3B"
-                    stroke-width="3"/>
-
-                <path
-                    d="M 205 55 L 235 12 L 235 70 Z"
-                    fill="#F4D03F"
-                    stroke="#176B3B"
-                    stroke-width="3"/>
-
-
-                <!-- EYES -->
-
-                <ellipse
-                    cx="180"
-                    cy="90"
-                    rx="12"
-                    ry="17"
-                    fill="white"/>
-
-                <ellipse
-                    cx="184"
-                    cy="92"
-                    rx="6"
-                    ry="10"
-                    fill="#222"/>
-
-                <circle
-                    cx="186"
-                    cy="87"
-                    r="3"
-                    fill="white"/>
-
-
-                <!-- SNOUT -->
-
-                <ellipse
-                    cx="238"
-                    cy="130"
-                    rx="38"
-                    ry="25"
-                    fill="#58D68D"
-                    stroke="#176B3B"
-                    stroke-width="3"/>
-
-
-                <!-- NOSTRILS -->
-
-                <circle cx="229" cy="120" r="3" fill="#176B3B"/>
-                <circle cx="245" cy="120" r="3" fill="#176B3B"/>
-
-
-                <!-- MOUTH -->
-
-                <path
-                    d="M 215 145 Q 245 165 270 140"
-                    fill="none"
-                    stroke="#176B3B"
-                    stroke-width="4"
-                    stroke-linecap="round"/>
-
-
-                <!-- FRONT WING -->
-
-                <path
-                    class="wing"
-                    d="M 110 135
-                       Q 95 65 140 35
-                       Q 135 90 175 75
-                       Q 185 115 155 145 Z"
-                    fill="#58D68D"
-                    stroke="#176B3B"
-                    stroke-width="4"/>
-
-
-                <!-- LEGS -->
-
-                <path
-                    d="M 90 210 L 80 240 L 105 240"
-                    fill="none"
-                    stroke="#176B3B"
-                    stroke-width="12"
-                    stroke-linecap="round"/>
-
-                <path
-                    d="M 155 210 L 160 240 L 185 240"
-                    fill="none"
-                    stroke="#176B3B"
-                    stroke-width="12"
-                    stroke-linecap="round"/>
-
-
-                <!-- FIRE COMING OUT OF MOUTH -->
-
-                <g class="fire" id="fire">
-
-                    <path
-                        class="outer-fire"
-                        d="M 260 130
-                           Q 300 90 325 115
-                           Q 315 125 330 135
-                           Q 305 155 260 140 Z"
-                        fill="#FF5722"/>
-
-                    <path
-                        class="middle-fire"
-                        d="M 260 130
-                           Q 290 110 310 130
-                           Q 290 145 260 140 Z"
-                        fill="#FFC107"/>
-
-                    <path
-                        class="inner-fire"
-                        d="M 260 132
-                           Q 280 122 295 133
-                           Q 280 142 260 138 Z"
-                        fill="#FFF176"/>
-
-                </g>
-
-            </svg>
-
-        </div>
-
-    </div>
 
  <!-- CONTACT MODAL -->
     <div class="modal-overlay" id="contactModal">
 
-        <div class="modal-box">
+        <div class="modal-box" role="dialog" aria-modal="true">
 
-            <button class="close-modal" type="button">
+            <button class="close-modal" type="button" aria-label="Close">
                 &times;
             </button>
 
@@ -604,6 +318,8 @@ http://www.w3.org/2000/svg
                     Send Message
                 </button>
 
+                <p class="form-status" id="formStatus" role="status"></p>
+
             </form>
 
         </div>
@@ -614,9 +330,9 @@ http://www.w3.org/2000/svg
     <!-- ABOUT MODAL -->
     <div class="modal-overlay" id="aboutModal">
 
-        <div class="modal-box">
+        <div class="modal-box" role="dialog" aria-modal="true">
 
-            <button class="close-modal" type="button">
+            <button class="close-modal" type="button" aria-label="Close">
                 &times;
             </button>
 
@@ -630,6 +346,8 @@ http://www.w3.org/2000/svg
         </div>
 
     </div>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="script.js"></script>
 
