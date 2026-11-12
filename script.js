@@ -127,3 +127,6 @@ if (typed && !reduceMotion) {
         setTimeout(tick, delay);
     })();
 }
+
+/* ---------- RESUME: view only (no right-click save / drag) ---------- */
+$(".no-save").forEach(el => el.addEventListener("contextmenu", e => e.preventDefault()));
