@@ -140,7 +140,7 @@
 
         <div class="card-container single">
             <article class="card showcase">
-                <img class="logo-img" src="image/logo.jpg" alt="SAKAY logo – your trusted booking companion" loading="lazy">
+                <img class="logo-img" src="image/logo.png" alt="SAKAY logo – your trusted booking companion" loading="lazy">
                 <h2>SAKAY</h2>
                 <p>A website for students to book a ride.</p>
             </article>
@@ -269,17 +269,23 @@
 
         <div class="section-content">
             <p>
-                You can view or download my resume using
+                You can view my resume using
                 the button below.
             </p>
 
-            <img class="resume-preview" src="image/res.webp" alt="Preview of Regine Rosialda's resume" loading="lazy">
+            <img class="resume-preview open-modal no-save" data-modal="resumeModal" src="image/res.webp" alt="Preview of Regine Rosialda's resume" draggable="false" loading="lazy">
 
-            <a href="image/res.webp" download class="btn"> <!-- LOVE EDITA ADI ANG RESUME HREFEF CHANGE ANG RESUME.PDF SA IMO FILE NAME IG SAVE LA ANG FILE SA JASPER FOLDER NAA SA DOCUMENT MAKITA-->
-                DOWNLOAD MY RESUME
-            </a>
+            <button type="button" class="btn open-modal" data-modal="resumeModal">VIEW MY RESUME</button>
         </div>
     </section>
+
+    <!-- RESUME VIEWER (view only) -->
+    <div class="modal-overlay" id="resumeModal">
+        <div class="modal-box resume-box" role="dialog" aria-modal="true" aria-label="Resume">
+            <button class="close-modal" type="button" aria-label="Close">&times;</button>
+            <img class="no-save" src="image/res.webp" alt="Regine Rosialda's resume" draggable="false">
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer>
